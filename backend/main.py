@@ -5,7 +5,7 @@ from pydantic import BaseModel
 from dotenv import load_dotenv
 from crew import run_crew
 
-load_dotenv()
+load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), ".env"), override=True)
 
 app = FastAPI(title="AI Dev Team API")
 
@@ -17,6 +17,9 @@ app.add_middleware(
 )
 
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "")
+# litellm routes gemini/ models to Google AI Studio only when GEMINI_API_KEY is set
+if GOOGLE_API_KEY:
+    os.environ["GEMINI_API_KEY"] = GOOGLE_API_KEY
 
 
 class GenerateRequest(BaseModel):
