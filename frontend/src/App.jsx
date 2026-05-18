@@ -108,7 +108,7 @@ export default function App() {
             </span>
           </div>
           <a
-            href="https://github.com"
+            href="https://github.com/white125-sudo/ai-dev-team"
             target="_blank"
             rel="noreferrer"
             className="text-xs text-slate-400 hover:text-slate-200 transition-colors"

@@ -4,7 +4,7 @@ from crewai import Agent, LLM
 
 def get_llm(api_key: str) -> LLM:
     return LLM(
-        model="gemini/gemini-1.5-flash",
+        model="gemini/gemini-2.0-flash",
         api_key=api_key,
         temperature=0.3,
     )
